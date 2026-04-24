@@ -28,12 +28,12 @@ export default function App(){
       <Button style={styles.botao} onPress={calculaMedia} title="Calcular" />
       <View style={styles.caixaResultado}>
         {
-          resultado != null && resultado > 7  && (
+          typeof resultado === "number" && resultado >= 7  && (
             <Text>Parabéns, sua média é {resultado.toFixed(1)} e você está aprovado!</Text>
           )
         }
         {
-          resultado != null && resultado < 7 && (
+          typeof resultado === "number" && resultado < 7 && (
             <Text>Que pena, sua média foi {resultado.toFixed(1)} e você está reprovado</Text>
           )
         }
