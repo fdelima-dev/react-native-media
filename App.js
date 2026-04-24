@@ -25,8 +25,8 @@ export default function App(){
       <TextInput style={styles.input} onChangeText={setNota1} keyboardType="numeric" />
       <TextInput style={styles.input} onChangeText={setNota2} keyboardType="numeric" />
       <TextInput style={styles.input} onChangeText={setNota3} keyboardType="numeric" />
-      <Button onPress={calculaMedia} title="Calcular" />
-      <View>
+      <Button style={styles.botao} onPress={calculaMedia} title="Calcular" />
+      <View style={styles.caixaResultado}>
         {
           resultado != null && resultado > 7  && (
             <Text>Parabéns, sua média é {resultado.toFixed(1)} e você está aprovado!</Text>
@@ -47,5 +47,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#007bff',
     marginBottom: 10,
-  }
-})
+    width: 200,
+  }, 
+  botao: {
+    width: 350,
+  },
+  caixaResultado: {
+    width: 200,
+  },
+});
